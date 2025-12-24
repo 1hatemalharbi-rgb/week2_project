@@ -1,6 +1,6 @@
 from pathlib import Path
 import pandas as pd
-
+import plotly.express as px
 from bootcamp_data.config import make_paths
 from bootcamp_data.quality import require_columns, assert_non_empty, assert_unique_key
 from bootcamp_data.transforms import parse_datetime, add_time_parts, winsorize, add_outlier_flag
@@ -12,10 +12,12 @@ ROOT = Path(__file__).resolve().parents[1]
 def main() -> None:
     p = make_paths(ROOT)
     orders = pd.read_parquet(p.processed / "orders_clean.parquet")
-    users  = pd.read_parquet(p.processed / "users.parquet")
 
-    require_columns(orders, ["order_id","user_id","amount","quantity","created_at","status_clean"])
-    require_columns(users, ["user_id","country","signup_date"])
+    users = pd.read_parquet(p.processed / "users.parquet")
+    users = pd.concat([users, users.iloc[[0]]], ignore_index=True)
+
+    require_columns(orders, ["order_id", "user_id", "amount", "quantity", "created_at", "status_clean"])
+    require_columns(users, ["user_id", "country", "signup_date"])
     assert_non_empty(orders, "orders_clean")
     assert_non_empty(users, "users")
 
@@ -52,11 +54,18 @@ def main() -> None:
     # revenue summary by country
     summary = (
         joined.groupby("country", dropna=False)
-              .agg(n=("order_id", "size"), revenue=("amount", "sum"))
-              .reset_index()
-              .sort_values("revenue", ascending=False)
+        .agg(n=("order_id", "size"), revenue=("amount", "sum"))
+        .reset_index()
+        .sort_values("revenue", ascending=False)
     )
     print(summary)
+
+    d = summary.sort_values("revenue", ascending=False)
+    fig = px.bar(d, x="country", y="revenue", title="Revenue by country (All time)")
+    fig.update_layout(title={"x": 0.02}, margin={"l": 60, "r": 20, "t": 60, "b": 60})
+    fig.update_xaxes(title_text="Country")
+    fig.update_yaxes(title_text="Revenue")
+    fig
 
     # Optional: write summary CSV
     reports_dir = ROOT / "reports"
