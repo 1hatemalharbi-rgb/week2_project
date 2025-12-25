@@ -6,6 +6,13 @@ This project uses `uv` for dependency + virtual environment management.
 - Python >= 3.11
 - `uv` installed
 
+## Step 1 — Download the project
+
+Open PowerShell and run:
+
+git clone https://github.com/1hatemalharbi-rgb/week2_project.git
+cd week2_project
+
 ## Windows (PowerShell)
 
 # 2) Install dependencies from pyproject.toml (+ lockfile)
