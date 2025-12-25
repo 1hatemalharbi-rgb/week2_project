@@ -32,8 +32,11 @@ data\processed\
 ## Run the notebook (in powershell project root) run:
 
 uv add notebook
+
 uv sync
+
 uv run jupyter notebook
+
 
 
 
