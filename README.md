@@ -34,9 +34,9 @@ data\processed\
 
 uv add notebook
 
-uv sync
 
 uv run jupyter notebook
+
 
 
 
