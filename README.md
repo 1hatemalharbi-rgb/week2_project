@@ -21,7 +21,7 @@ uv sync
 
 # From the project root run:
 $env:PYTHONPATH="src"
-uv run python scripts\run_etl.py
+uv run python .\scripts\run_etl.py
 
 ## When the script finishes
 
@@ -41,4 +41,5 @@ Choose a kernel, select the project environment:
 .venv
 
 Run all cells
+
 
