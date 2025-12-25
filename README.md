@@ -34,8 +34,12 @@ data\processed\
 
 uv add notebook
 
-
+## to view all files run:
 uv run jupyter notebook
+
+## for a simple shortcut run:
+
+uv run jupyter notebook notebooks/eda.ipynb
 
 
 
