@@ -10,7 +10,7 @@ This project uses `uv` for dependency + virtual environment management.
 
 Open PowerShell and run:
 
-`git clone https://github.com/1hatemalharbi-rgb/week2_project.git
+`` git clone https://github.com/1hatemalharbi-rgb/week2_project.git
 
 `cd week2_project
 
@@ -36,6 +36,7 @@ data\processed\
 
 
 `uv run jupyter notebook
+
 
 
 
