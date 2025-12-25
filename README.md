@@ -21,7 +21,8 @@ uv sync
 
 # From the project root run:
 $env:PYTHONPATH="src"
-uv run python scripts\run_etl.py
+
+uv run python .\scripts\run_etl.py
 
 ## When the script finishes
 
@@ -29,16 +30,15 @@ Output files will be created in:
 
 data\processed\
 
-## Run the notebook (VS Code)
+## Run the notebook (in powershell project root) run:
 
-Open the project folder in VS Code
+uv add notebook
 
-Open:
-notebooks\eda.ipynb
 
-Choose a kernel, select the project environment:
+uv run jupyter notebook
 
-.venv
 
-Run all cells
+
+
+
 
