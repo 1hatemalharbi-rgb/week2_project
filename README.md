@@ -1,11 +1,29 @@
-## **Run Analytics code**
+# (Week 2)
 
----
+This project uses `uv` for dependency + virtual environment management.
 
-```bash
-# Build analytics table
-python scripts/run_day3_build_analytics.py
+## Requirements
+- Python >= 3.11
+- `uv` installed
 
-# Inspect output
-python -c "import pandas as pd; df=pd.read_parquet('data/processed/analytics_table.parquet'); print(df.columns.tolist()); print(df[['user_id','country','month','amount','amount_winsor','amount_is_outlier']].head())"
+## Setup (first time)
+# Install Python (if not already present)
+uv python install 3.11
+# Install the virtual environment
+winget install Astral.uv
+### Windows (PowerShell)
+```powershell
+# 1) Create the virtual environment (optional if already created)run:
+uv venv
 
+# 2) Install dependencies from pyproject.toml (+ lockfile)run:
+uv sync
+
+# From the project root run:
+$env:PYTHONPATH="src"
+uv run python scripts\run_etl.py
+### When the script finishes:
+
+Output files will be created in:
+
+data\processed\
