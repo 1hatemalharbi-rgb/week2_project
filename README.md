@@ -10,19 +10,19 @@ This project uses `uv` for dependency + virtual environment management.
 
 Open PowerShell and run:
 
-``git clone https://github.com/1hatemalharbi-rgb/week2_project.git
+`git clone https://github.com/1hatemalharbi-rgb/week2_project.git
 
-``cd week2_project
+`cd week2_project
 
 ## Windows (PowerShell)
 
 # 2) Install dependencies from pyproject.toml (+ lockfile)
-``uv sync
+`uv sync
 
 # From the project root run:
-``$env:PYTHONPATH="src"
+`$env:PYTHONPATH="src"
 
-``uv run python .\scripts\run_etl.py
+`uv run python .\scripts\run_etl.py
 
 ## When the script finishes
 
@@ -32,10 +32,11 @@ data\processed\
 
 ## Run the notebook (in powershell project root) run:
 
-``uv add notebook
+`uv add notebook
 
 
-``uv run jupyter notebook
+`uv run jupyter notebook
+
 
 
 
