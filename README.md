@@ -21,6 +21,7 @@ uv sync
 
 # From the project root run:
 $env:PYTHONPATH="src"
+
 uv run python .\scripts\run_etl.py
 
 ## When the script finishes
@@ -36,6 +37,7 @@ uv add notebook
 uv sync
 
 uv run jupyter notebook
+
 
 
 
