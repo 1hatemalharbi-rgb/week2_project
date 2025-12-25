@@ -11,6 +11,7 @@ This project uses `uv` for dependency + virtual environment management.
 Open PowerShell and run:
 
 git clone https://github.com/1hatemalharbi-rgb/week2_project.git
+
 cd week2_project
 
 ## Windows (PowerShell)
@@ -40,3 +41,4 @@ Choose a kernel, select the project environment:
 .venv
 
 Run all cells
+
