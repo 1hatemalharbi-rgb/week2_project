@@ -29,17 +29,11 @@ Output files will be created in:
 
 data\processed\
 
-## Run the notebook (VS Code)
+## Run the notebook (in powershell project root) run:
 
-Open the project folder in VS Code
+uv add notebook
+uv sync
+uv run jupyter notebook
 
-Open:
-notebooks\eda.ipynb
-
-Choose a kernel, select the project environment:
-
-.venv
-
-Run all cells
 
 
